@@ -1,29 +1,31 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle, ThemeProvider } from "styled-components";
 import normalize from "normalize.css";
-import { Helmet } from "react-helmet";
+
+const theme = {
+  fonts: {
+    body: "Roboto, sans-serif",
+  },
+};
 
 const GlobalStyle = createGlobalStyle`
 ${normalize}
-
   body {
+    font-family: ${(props) => props.theme.fonts.body};
     padding: 0;
-    font-family: "Roboto", sans-serif;
   }
 `;
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Helmet>
-      <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
-        rel="stylesheet"
-      />
-    </Helmet>
-    <GlobalStyle />
-    <App />
+    <ThemeProvider theme={theme}>
+      <>
+        <GlobalStyle />
+        <App />
+      </>
+    </ThemeProvider>
   </React.StrictMode>
 );
