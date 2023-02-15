@@ -5,13 +5,22 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-import Error from "./Components/Error";
-import Profil from "./Components/Profil";
+import styled from "styled-components";
+import Error from "./Pages/Error";
+import Profil from "./Pages/Profil";
 
-//redirect ou Redirect
+const AppStyled = styled.div`
+  position: relative;
+  margin: auto;
+  background-color: white;
+  min-width: 1024px;
+  min-height: 780px;
+  height: 100vh;
+`;
+
 const App = () => {
   return (
-    <div className="App">
+    <AppStyled>
       <Router>
         <Routes>
           <Route path="/" element={<Navigate to="/user/12" replace />} />
@@ -19,7 +28,7 @@ const App = () => {
           <Route path="*" element={<Error />} />
         </Routes>
       </Router>
-    </div>
+    </AppStyled>
   );
 };
 
