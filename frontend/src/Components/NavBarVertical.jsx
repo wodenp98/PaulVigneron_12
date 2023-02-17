@@ -11,7 +11,7 @@ const Nav = styled.nav`
   left: 0;
   box-sizing: border-box;
   width: 117px;
-  height: 90%;
+  height: calc(100% - 91px);
   padding: 150px 0;
   background-color: black;
 `;
