@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { PieChart, Pie, Cell, Legend } from "recharts";
+import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 
 const GraphContainer = styled.div`
   position: relative;
@@ -8,6 +8,8 @@ const GraphContainer = styled.div`
   box-sizing: border-box;
   border-radius: 5px;
   background-color: #fbfbfb;
+  width: 258px;
+  height: 263px;
 `;
 
 const Title = styled.h2`
@@ -45,26 +47,28 @@ const Score = ({ score }) => {
   return (
     <GraphContainer>
       <Title>Score</Title>
-      <PieChart width={258} height={263}>
-        <circle cx="50%" cy="50%" r={75} fill="#FFFFFF" />
-        <Pie
-          data={data}
-          dataKey="value"
-          startAngle={90}
-          endAngle={90 + 360}
-          innerRadius={70}
-          outerRadius={80}
-          isAnimationActive={false}
-        >
-          {data.map((entry, index) => (
-            <Cell
-              cornerRadius="100%"
-              fill={COLORS[index]}
-              key={`cell-${index}`}
-            />
-          ))}
-        </Pie>
-      </PieChart>
+      <ResponsiveContainer width="100%" height="100%">
+        <PieChart>
+          <circle cx="50%" cy="50%" r={75} fill="#FFFFFF" />
+          <Pie
+            data={data}
+            dataKey="value"
+            startAngle={90}
+            endAngle={90 + 360}
+            innerRadius={70}
+            outerRadius={80}
+            isAnimationActive={false}
+          >
+            {data.map((entry, index) => (
+              <Cell
+                cornerRadius="100%"
+                fill={COLORS[index]}
+                key={`cell-${index}`}
+              />
+            ))}
+          </Pie>
+        </PieChart>
+      </ResponsiveContainer>
 
       <PercentContainer>
         <PercentParagraph>{score.score * 100}%</PercentParagraph>
@@ -74,8 +78,6 @@ const Score = ({ score }) => {
           objectif
         </ObjectiveParagraph>
       </PercentContainer>
-
-      <Legend align="left" content="Score" verticalAlign="top" />
     </GraphContainer>
   );
 };
