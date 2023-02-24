@@ -14,8 +14,10 @@ const GlobalStyle = createGlobalStyle`
 ${normalize}
   body {
     font-family: ${(props) => props.theme.fonts.body};
-    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
   }
+
 `;
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

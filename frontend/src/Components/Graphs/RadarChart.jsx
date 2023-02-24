@@ -5,12 +5,15 @@ import {
   RadarChart,
   PolarGrid,
   PolarAngleAxis,
-  PolarRadiusAxis,
   ResponsiveContainer,
 } from "recharts";
 
 const GraphContainer = styled.div`
-  height: 263px;
+  background-color: #282d30;
+  border-radius: 5px;
+  font-size: 10px;
+  width: 253px;
+  height: 268px;
 `;
 
 const day = {
@@ -25,16 +28,18 @@ const day = {
 const RadarChartGraphs = ({ performance }) => {
   return (
     <GraphContainer>
-      <ResponsiveContainer width="100%" height="100%">
-        <RadarChart outerRadius="53%" data={performance.data}>
+      <ResponsiveContainer>
+        <RadarChart outerRadius="70%" data={performance.data}>
           <PolarGrid radialLines={false} />
           <PolarAngleAxis
             dataKey="kind"
-            tickLine={false}
+            fontSize={12}
+            stroke="white"
             tickFormatter={(value) => day[value]}
+            tickLine={false}
+            tickSize={12}
           />
-          <PolarRadiusAxis axisLine={false} tick={false} />
-          <Radar dataKey="value" fill="#ff0101" fillOpacity={0.7} />
+          <Radar dataKey="value" fill="#FF0101" fillOpacity={0.7} />
         </RadarChart>
       </ResponsiveContainer>
     </GraphContainer>

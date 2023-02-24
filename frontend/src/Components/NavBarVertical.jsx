@@ -5,44 +5,52 @@ import IconStrenght from "../assets/iconStrenght.png";
 import IconSwim from "../assets/iconSwim.png";
 import IconYoga from "../assets/iconYoga.png";
 
-const Nav = styled.nav`
-  position: absolute;
-  bottom: 0;
-  left: 0;
+const NavContainer = styled.div`
+  grid-column: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   box-sizing: border-box;
   width: 117px;
   height: calc(100% - 91px);
-  padding: 150px 0;
+  padding: 200px 0;
   background-color: black;
 `;
 
-const NavImgContainer = styled.div`
+const Nav = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   > img {
-    margin: 0 auto 20px;
+    margin-top: 20px;
+    width: 64px;
+    height: 64px;
   }
 `;
 
-const NavCopyright = styled.div`
-  margin-top: 130px;
-  white-space: nowrap;
-  font-size: 12px;
+const CopyrightDiv = styled.div`
   color: white;
-  transform: rotate(-90deg);
+  font-size: 12px;
+  margin-top: 150px;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  white-space: nowrap;
 `;
 
 const NavBarVertical = () => {
   return (
-    <Nav>
-      <NavImgContainer>
+    <NavContainer>
+      <Nav>
         <img src={IconYoga} alt="Icone Yoga" />
+
         <img src={IconSwim} alt="Icone Natation" />
+
         <img src={IconBike} alt="Icone Vélo" />
+
         <img src={IconStrenght} alt="Icone Musculation" />
-      </NavImgContainer>
-      <NavCopyright>Copiryght, SportSee 2020</NavCopyright>
-    </Nav>
+      </Nav>
+      <CopyrightDiv>Copyright, SportSee 2020</CopyrightDiv>
+    </NavContainer>
   );
 };
 

@@ -4,11 +4,11 @@ import styled from "styled-components";
 const PresentationContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 40px;
+  margin-bottom: 80px;
 `;
 
 const PresentationName = styled.h2`
-  margin: 0 0 20px;
+  margin: 0 0 38px;
   font-size: 48px;
   > span {
     color: red;

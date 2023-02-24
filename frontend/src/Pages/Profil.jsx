@@ -15,11 +15,25 @@ import {
   USER_MAIN_DATA,
 } from "../data/mock_user-data";
 
-const ContainerUser = styled.div`
-  margin-left: 100px;
-  height: 88%;
+const Main = styled.main`
+  display: grid;
+  grid-template-columns: 117px 1fr;
+  grid-gap: 150px;
+  height: 90%;
   box-sizing: border-box;
-  padding: 61px 90px 40px 108px;
+`;
+
+const GraphSide = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  width: 835px;
+`;
+
+const GraphGrid = styled.div`
+  grid-column: 2;
+  margin-top: 70px;
+  height: 800px;
 `;
 
 const Profil = () => {
@@ -38,16 +52,20 @@ const Profil = () => {
   return (
     <>
       <HeaderLogo />
-      <NavBarVertical />
-      <ContainerUser>
-        <Presentation firstName="Karl" />
+      <Main>
+        <NavBarVertical />
+        <GraphGrid>
+          <Presentation firstName="Karl" />
 
-        {/* faire une div qui contient tout les graphiques? */}
-        <ActivityCharts activity={userActivity.sessions} />
-        <PerformanceCharts performance={userPerformance} />
-        <AverageSessions average={userAverageSession.sessions} />
-        <MainData score={userData} />
-      </ContainerUser>
+          <ActivityCharts activity={userActivity.sessions} />
+
+          <GraphSide>
+            <AverageSessions average={userAverageSession.sessions} />
+            <PerformanceCharts performance={userPerformance} />
+            <MainData score={userData} />
+          </GraphSide>
+        </GraphGrid>
+      </Main>
     </>
   );
 };

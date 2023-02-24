@@ -5,9 +5,9 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-import styled from "styled-components";
-import Error from "./Pages/Error";
+
 import Profil from "./Pages/Profil";
+import styled from "styled-components";
 
 const AppStyled = styled.div`
   position: relative;
@@ -15,7 +15,7 @@ const AppStyled = styled.div`
   background-color: white;
   min-width: 1024px;
   min-height: 780px;
-  height: 100vh;
+  height: 1024px;
 `;
 
 const App = () => {
@@ -25,7 +25,6 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Navigate to="/user/12" replace />} />
           <Route path="/user/:id" element={<Profil />} />
-          <Route path="*" element={<Error />} />
         </Routes>
       </Router>
     </AppStyled>

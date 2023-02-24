@@ -6,16 +6,15 @@ import NavBarHorizontal from "./NavBarHorizontal";
 const Header = styled.header`
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  align-items: center;
   height: 91px;
   background-color: black;
-  align-items: center;
   box-sizing: border-box;
-  padding: 0px 91px 0px 25px;
+  padding: 0px 90px 0px 25px;
 `;
 
 const LogoTitle = styled.h1`
-  margin: 4px 150px 0 0;
+  margin: 0 130px 0 0;
   > img {
     width: 178px;
   }
