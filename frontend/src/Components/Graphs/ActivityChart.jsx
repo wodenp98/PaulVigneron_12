@@ -8,21 +8,14 @@ import {
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
-  Legend,
 } from "recharts";
+import LegendContainer from "./LegendActivity";
 
 const GraphContainer = styled.div`
   width: 835px;
   height: 320px;
   background: #fbfbfb;
-  padding-top: 20px;
   box-sizing: border-box;
-`;
-const Title = styled.h2`
-  position: absolute;
-  margin-top: 20px;
-  margin-left: 40px;
-  font-size: 15px;
 `;
 
 const TooltipDiv = styled.div`
@@ -54,16 +47,17 @@ const CustomTooltip = ({ payload, active }) => {
   return null;
 };
 
-const legendFormatter = (value) => {
-  return <span style={{ color: "#74798C" }}>{value}</span>;
-};
-
 const ActivityChart = ({ activity }) => {
   return (
     <GraphContainer>
-      <Title>Activité quotidienne</Title>
-      <ResponsiveContainer width="95%" height="95%">
-        <BarChart data={activity} barGap={8} barSize={8} margin={{ left: 50 }}>
+      <LegendContainer />
+      <ResponsiveContainer width="98%" height="80%">
+        <BarChart
+          data={activity}
+          barGap={8}
+          barSize={8}
+          margin={{ left: 50, top: 10 }}
+        >
           <CartesianGrid
             stroke="#DEDEDE"
             strokeDasharray="3 3"
@@ -92,7 +86,7 @@ const ActivityChart = ({ activity }) => {
           />
           <YAxis
             dataKey="calories"
-            domain={[0, "dataMax"]}
+            domain={[0, "dataMax "]}
             hide
             yAxisId="kCal"
           />
@@ -103,15 +97,6 @@ const ActivityChart = ({ activity }) => {
             height={63}
             wrapperStyle={{ outlineStyle: "none" }}
             width={39}
-          />
-          <Legend
-            align="right"
-            formatter={legendFormatter}
-            height={50}
-            iconSize={8}
-            iconType="circle"
-            verticalAlign="top"
-            wrapperStyle={{ paddingTop: "20px" }}
           />
           <Bar
             dataKey="kilogram"
