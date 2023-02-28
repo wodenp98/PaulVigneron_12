@@ -1,6 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer } from "recharts";
+import {
+  LineChart,
+  Line,
+  XAxis,
+  Tooltip,
+  ResponsiveContainer,
+  YAxis,
+} from "recharts";
 
 const GraphContainer = styled.div`
   background-color: #ff0000;
@@ -67,12 +74,13 @@ const AverageSessions = ({ average }) => {
             tickFormatter={(value) => day[value]}
             tickLine={false}
           />
+          <YAxis hide padding={{ top: 30 }} />
           <Tooltip
             content={<CustomTooltip />}
             cursor={{
               stroke: "#000000",
               strokeOpacity: 0.1,
-              strokeWidth: 60,
+              strokeWidth: 80,
             }}
             wrapperStyle={{ left: -20, outlineStyle: "none" }}
           />
@@ -81,6 +89,7 @@ const AverageSessions = ({ average }) => {
             dot={false}
             stroke="white"
             strokeOpacity="0.7"
+            strokeWidth={1.5}
             type="monotone"
           />
         </LineChart>

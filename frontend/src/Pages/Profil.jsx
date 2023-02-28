@@ -7,6 +7,7 @@ import ActivityCharts from "../Components/Graphs/ActivityChart";
 import PerformanceCharts from "../Components/Graphs/RadarChart";
 import AverageSessions from "../Components/Graphs/AverageSessions";
 import MainData from "../Components/Graphs/Score";
+import NutritionCards from "../Components/NutritionCards";
 
 import {
   USER_ACTIVITY,
@@ -17,9 +18,10 @@ import {
 
 const Main = styled.main`
   display: grid;
-  grid-template-columns: 117px 1fr;
-  grid-gap: 150px;
-  height: 90%;
+  grid-template-columns: 117px 835px 1fr;
+  grid-template-rows: 254px 1fr;
+  grid-column-gap: 30px;
+  height: calc(100% - 91px);
   box-sizing: border-box;
 `;
 
@@ -31,9 +33,10 @@ const GraphSide = styled.div`
 `;
 
 const GraphGrid = styled.div`
-  grid-column: 2;
-  margin-top: 70px;
-  height: 800px;
+  grid-area: 2 / 2 / 2 / 4;
+  width: 65%;
+  height: 95%;
+  margin-left: 50px;
 `;
 
 const Profil = () => {
@@ -54,9 +57,8 @@ const Profil = () => {
       <HeaderLogo />
       <Main>
         <NavBarVertical />
+        <Presentation firstName="Karl" />
         <GraphGrid>
-          <Presentation firstName="Karl" />
-
           <ActivityCharts activity={userActivity.sessions} />
 
           <GraphSide>
@@ -65,6 +67,7 @@ const Profil = () => {
             <MainData score={userData} />
           </GraphSide>
         </GraphGrid>
+        <NutritionCards nutritionData={userData.keyData} />
       </Main>
     </>
   );

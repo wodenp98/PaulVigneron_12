@@ -29,6 +29,7 @@ const TooltipDiv = styled.div`
   padding: 6px 0px;
   color: white;
   font-size: 7px;
+  margin-left: 10px;
 `;
 
 const TooltipParagraph = styled.p`
@@ -75,7 +76,7 @@ const ActivityChart = ({ activity }) => {
           <YAxis
             axisLine={false}
             dataKey="kilogram"
-            domain={["dataMin - 1", "dataMax "]}
+            domain={["dataMin - 1", "dataMax + 2"]}
             orientation="right"
             tick={{ fontSize: 14, fill: "#9B9EAC" }}
             tickCount={3}

@@ -7,13 +7,12 @@ import IconYoga from "../assets/iconYoga.png";
 
 const NavContainer = styled.div`
   grid-column: 1;
+  grid-row: span 2;
   display: flex;
   align-items: center;
   flex-direction: column;
   box-sizing: border-box;
-  width: 117px;
-  height: calc(100% - 91px);
-  padding: 200px 0;
+  padding-top: 200%;
   background-color: black;
 `;
 

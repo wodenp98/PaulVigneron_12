@@ -4,7 +4,8 @@ import styled from "styled-components";
 const PresentationContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 80px;
+  margin-top: 80px;
+  margin-left: 50px;
 `;
 
 const PresentationName = styled.h2`
