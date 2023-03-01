@@ -8,8 +8,7 @@ const GraphContainer = styled.div`
   box-sizing: border-box;
   border-radius: 5px;
   background-color: #fbfbfb;
-  width: 258px;
-  height: 263px;
+  width: 30%;
 `;
 
 const Title = styled.h2`
@@ -17,6 +16,10 @@ const Title = styled.h2`
   margin-top: 20px;
   margin-left: 20px;
   font-size: 15px;
+  @media screen and (max-width: 1220px) {
+    margin-top: 10px;
+    margin-left: 10px;
+  }
 `;
 
 const ObjectiveParagraph = styled.h3`
@@ -27,14 +30,20 @@ const ObjectiveParagraph = styled.h3`
 const PercentContainer = styled.div`
   text-align: center;
   position: absolute;
-  top: 70px;
-  left: 100px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 100px;
 `;
 
 const PercentParagraph = styled.p`
   font-size: 25px;
   font-weight: bold;
   margin-bottom: 5px;
+  @media screen and (max-width: 1220px) {
+    font-size: 20px;
+  }
 `;
 
 const COLORS = ["#ff0101", "transparent"];

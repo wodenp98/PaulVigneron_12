@@ -11,12 +11,18 @@ const Header = styled.header`
   background-color: black;
   box-sizing: border-box;
   padding: 0px 90px 0px 25px;
+  @media screen and (max-width: 1220px) {
+    padding: 0px 60px 0px 15px;
+  }
 `;
 
 const LogoTitle = styled.h1`
   margin: 0 130px 0 0;
   > img {
     width: 178px;
+    @media screen and (max-width: 1220px) {
+      width: 150px;
+    }
   }
 `;
 

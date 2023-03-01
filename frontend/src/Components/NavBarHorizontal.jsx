@@ -6,6 +6,9 @@ const Nav = styled.nav`
   justify-content: space-between;
   width: 100%;
   font-size: 24px;
+  @media screen and (max-width: 1220px) {
+    font-size: 20px;
+  }
 `;
 
 const Menu = styled.p`

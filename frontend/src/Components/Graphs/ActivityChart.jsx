@@ -12,8 +12,8 @@ import {
 import LegendContainer from "./LegendActivity";
 
 const GraphContainer = styled.div`
-  width: 835px;
-  height: 320px;
+  width: 100%;
+  height: 45%;
   background: #fbfbfb;
   box-sizing: border-box;
 `;

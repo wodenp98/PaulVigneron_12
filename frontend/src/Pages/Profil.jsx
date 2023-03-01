@@ -18,24 +18,30 @@ import {
 
 const Main = styled.main`
   display: grid;
-  grid-template-columns: 117px 835px 1fr;
-  grid-template-rows: 254px 1fr;
+  grid-template-columns: 10% 63% 20%;
+  grid-template-rows: 30% 1fr;
   grid-column-gap: 30px;
   height: calc(100% - 91px);
   box-sizing: border-box;
+  @media screen and (max-width: 1220px) {
+    grid-template-columns: 10% 60% 20%;
+  }
 `;
 
 const GraphSide = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 40px;
-  width: 835px;
+  width: 100%;
+  height: 42%;
+  @media screen and (max-width: 1220px) {
+    height: 30%;
+  }
 `;
 
 const GraphGrid = styled.div`
   grid-area: 2 / 2 / 2 / 4;
-  width: 65%;
-  height: 95%;
+  grid-column: 2;
   margin-left: 50px;
 `;
 

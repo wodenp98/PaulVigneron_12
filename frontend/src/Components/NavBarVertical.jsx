@@ -12,7 +12,7 @@ const NavContainer = styled.div`
   align-items: center;
   flex-direction: column;
   box-sizing: border-box;
-  padding-top: 200%;
+  padding-top: 180%;
   background-color: black;
 `;
 

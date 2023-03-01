@@ -11,13 +11,16 @@ const DivContainer = styled.div`
   flex-direction: column;
   height: 92%;
   justify-content: space-between;
-  margin-left: 50px;
+  @media screen and (max-width: 1220px) {
+    height: 82%;
+  }
 `;
 
 const DivCards = styled.div`
   background-color: #fbfbfb;
-  height: 124px;
-  width: 258px;
+  height: 21%;
+  width: 90%;
+  border-radius: 5px;
   display: flex;
   align-items: center;
 `;
@@ -27,6 +30,12 @@ const ImgIcon = styled.img`
   height: 60px;
   padding-left: 30px;
   padding-right: 30px;
+  @media screen and (max-width: 1220px) {
+    width: 40px;
+    height: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 `;
 
 const DivValueContent = styled.div``;
@@ -35,6 +44,9 @@ const ParagraphValue = styled.p`
   font-size: 20px;
   font-weight: bold;
   margin: 0;
+  @media screen and (max-width: 1220px) {
+    font-size: 15px;
+  }
 `;
 
 const ParagraphType = styled.p`

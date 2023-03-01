@@ -17,8 +17,7 @@ const GraphContainer = styled.div`
   padding: 0;
   color: white;
   font-size: 10px;
-  width: 253px;
-  height: 268px;
+  width: 30%;
 `;
 
 const Title = styled.h3`
@@ -28,6 +27,11 @@ const Title = styled.h3`
   position: absolute;
   top: 20px;
   left: 20px;
+  @media screen and (max-width: 1220px) {
+    font-size: 12px;
+    top: 15px;
+    left: 15px;
+  }
 `;
 
 const TooltipDiv = styled.div`
