@@ -1,4 +1,5 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import HeaderLogo from "../Components/HeaderLogo";
 import NavBarVertical from "../Components/NavBarVertical";
@@ -15,6 +16,9 @@ import {
   USER_AVERAGE_SESSIONS,
   USER_MAIN_DATA,
 } from "../data/mock_user-data";
+
+import { useFetchActivity, useFetchFirstname } from "../services/Services";
+import { getActivitySessions, getFirstname } from "../utils/Model";
 
 const Main = styled.main`
   display: grid;
@@ -47,6 +51,14 @@ const GraphGrid = styled.div`
 
 const Profil = () => {
   const userId = 12;
+  let { id } = useParams();
+
+  const [dataFirstname] = useFetchFirstname(id);
+  const firstname = getFirstname(dataFirstname);
+
+  const [dataActivity] = useFetchActivity(id);
+  const activity = getActivitySessions(dataActivity);
+
   const userActivity = USER_ACTIVITY.find((user) => user.userId === userId);
   const userPerformance = USER_PERFORMANCE.find(
     (user) => user.userId === userId
@@ -63,7 +75,7 @@ const Profil = () => {
       <HeaderLogo />
       <Main>
         <NavBarVertical />
-        <Presentation firstName="Karl" />
+        <Presentation firstName={firstname} />
         <GraphGrid>
           <ActivityCharts activity={userActivity.sessions} />
 
