@@ -11,14 +11,19 @@ import MainData from "../Components/Graphs/Score";
 import NutritionCards from "../Components/NutritionCards";
 
 import {
-  USER_ACTIVITY,
-  USER_PERFORMANCE,
-  USER_AVERAGE_SESSIONS,
-  USER_MAIN_DATA,
-} from "../data/mock_user-data";
-
-import { useFetchActivity, useFetchFirstname } from "../services/Services";
-import { getActivitySessions, getFirstname } from "../utils/Model";
+  useFetchActivity,
+  useFetchFirstname,
+  useFetchAverageSessions,
+  useFetchPerformance,
+} from "../services/Services";
+import {
+  getActivitySessions,
+  getFirstname,
+  getAverageSessions,
+  getPerformance,
+  getScore,
+  getNutrition,
+} from "../utils/Model";
 
 const Main = styled.main`
   display: grid;
@@ -50,7 +55,6 @@ const GraphGrid = styled.div`
 `;
 
 const Profil = () => {
-  const userId = 12;
   let { id } = useParams();
 
   const [dataFirstname] = useFetchFirstname(id);
@@ -59,16 +63,15 @@ const Profil = () => {
   const [dataActivity] = useFetchActivity(id);
   const activity = getActivitySessions(dataActivity);
 
-  const userActivity = USER_ACTIVITY.find((user) => user.userId === userId);
-  const userPerformance = USER_PERFORMANCE.find(
-    (user) => user.userId === userId
-  );
+  const [dataAverageSessions] = useFetchAverageSessions(id);
+  const averageSessions = getAverageSessions(dataAverageSessions);
 
-  const userAverageSession = USER_AVERAGE_SESSIONS.find(
-    (user) => user.userId === userId
-  );
+  const [dataPerformance] = useFetchPerformance(id);
+  const performance = getPerformance(dataPerformance);
 
-  const userData = USER_MAIN_DATA.find((user) => user.id === userId);
+  const score = getScore(dataFirstname);
+
+  const nutritionData = getNutrition(dataFirstname);
 
   return (
     <>
@@ -77,15 +80,15 @@ const Profil = () => {
         <NavBarVertical />
         <Presentation firstName={firstname} />
         <GraphGrid>
-          <ActivityCharts activity={userActivity.sessions} />
+          <ActivityCharts activity={activity} />
 
           <GraphSide>
-            <AverageSessions average={userAverageSession.sessions} />
-            <PerformanceCharts performance={userPerformance} />
-            <MainData score={userData} />
+            <AverageSessions average={averageSessions} />
+            <PerformanceCharts performance={performance} />
+            <MainData score={score} />
           </GraphSide>
         </GraphGrid>
-        <NutritionCards nutritionData={userData.keyData} />
+        <NutritionCards nutritionData={nutritionData} />
       </Main>
     </>
   );

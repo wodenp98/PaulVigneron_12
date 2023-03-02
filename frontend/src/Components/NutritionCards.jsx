@@ -4,6 +4,7 @@ import iconCalories from "../assets/iconCalories.png";
 import iconGlucides from "../assets/iconGlucides.png";
 import iconLipides from "../assets/iconLipides.png";
 import iconProteines from "../assets/iconProteines.png";
+import PropTypes from "prop-types";
 
 const DivContainer = styled.div`
   grid-area: 2 / 3 / 2 / 4;
@@ -63,7 +64,7 @@ const NutritionCards = ({ nutritionData }) => {
         <ImgIcon src={iconCalories} alt="Icône Calories" />
         <DivValueContent>
           <ParagraphValue>
-            {nutritionData.calorieCount.toLocaleString("en-US")}kCal
+            {nutritionData?.calorieCount.toLocaleString("en-US")}kCal
           </ParagraphValue>
           <ParagraphType>Calories</ParagraphType>
         </DivValueContent>
@@ -71,21 +72,21 @@ const NutritionCards = ({ nutritionData }) => {
       <DivCards>
         <ImgIcon src={iconProteines} alt="Icône Protéines" />
         <DivValueContent>
-          <ParagraphValue>{nutritionData.proteinCount}g</ParagraphValue>
+          <ParagraphValue>{nutritionData?.proteinCount}g</ParagraphValue>
           <ParagraphType>Proteines</ParagraphType>
         </DivValueContent>
       </DivCards>
       <DivCards>
         <ImgIcon src={iconGlucides} alt="Icône Glucides" />
         <DivValueContent>
-          <ParagraphValue>{nutritionData.carbohydrateCount}g</ParagraphValue>
+          <ParagraphValue>{nutritionData?.carbohydrateCount}g</ParagraphValue>
           <ParagraphType>Glucides</ParagraphType>
         </DivValueContent>
       </DivCards>
       <DivCards>
         <ImgIcon src={iconLipides} alt="Icône Lipides" />
         <DivValueContent>
-          <ParagraphValue>{nutritionData.lipidCount}g</ParagraphValue>
+          <ParagraphValue>{nutritionData?.lipidCount}g</ParagraphValue>
           <ParagraphType>Lipides</ParagraphType>
         </DivValueContent>
       </DivCards>

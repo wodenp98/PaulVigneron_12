@@ -8,6 +8,7 @@ import {
   ResponsiveContainer,
   YAxis,
 } from "recharts";
+import PropTypes from "prop-types";
 
 const GraphContainer = styled.div`
   background-color: #ff0000;
@@ -49,8 +50,6 @@ const TooltipParagraph = styled.p`
   margin: auto;
 `;
 
-const day = { 1: "L", 2: "M", 3: "M", 4: "J", 5: "V", 6: "S", 7: "D" };
-
 function CustomTooltip({ payload, active }) {
   if (active && payload && payload.length) {
     return (
@@ -75,7 +74,6 @@ const AverageSessions = ({ average }) => {
             padding={{ left: 10, right: 10 }}
             stroke="white"
             tick={{ opacity: 0.5 }}
-            tickFormatter={(value) => day[value]}
             tickLine={false}
           />
           <YAxis hide padding={{ top: 30 }} />

@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
+import PropTypes from "prop-types";
 
 const GraphContainer = styled.div`
   position: relative;
@@ -49,10 +50,7 @@ const PercentParagraph = styled.p`
 const COLORS = ["#ff0101", "transparent"];
 
 const Score = ({ score }) => {
-  const data = [
-    { value: score.score * 100 },
-    { value: 100 - score.score * 100 },
-  ];
+  const data = [{ value: score }, { value: 100 - score }];
   return (
     <GraphContainer>
       <Title>Score</Title>
@@ -80,7 +78,7 @@ const Score = ({ score }) => {
       </ResponsiveContainer>
 
       <PercentContainer>
-        <PercentParagraph>{score.score * 100}%</PercentParagraph>
+        <PercentParagraph>{score}%</PercentParagraph>
         <ObjectiveParagraph>
           de votre
           <br />

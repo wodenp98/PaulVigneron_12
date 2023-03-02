@@ -40,3 +40,45 @@ export function useFetchActivity(id) {
   }, [id]);
   return [dataActivity, error];
 }
+
+export function useFetchAverageSessions(id) {
+  const [dataAverageSessions, setDataAverageSessions] = useState([]);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          `http://localhost:3001/user/${id}/average-sessions`
+        );
+        setDataAverageSessions(response.data);
+      } catch (error) {
+        setError(error);
+      }
+    };
+
+    fetchData();
+  }, [id]);
+  return [dataAverageSessions, error];
+}
+
+export function useFetchPerformance(id) {
+  const [dataPerformance, setDataPerformance] = useState([]);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          `http://localhost:3001/user/${id}/performance`
+        );
+        setDataPerformance(response.data);
+      } catch (error) {
+        setError(error);
+      }
+    };
+
+    fetchData();
+  }, [id]);
+  return [dataPerformance, error];
+}

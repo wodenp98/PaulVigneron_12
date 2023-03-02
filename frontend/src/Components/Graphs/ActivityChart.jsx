@@ -10,6 +10,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import LegendContainer from "./LegendActivity";
+import PropTypes from "prop-types";
 
 const GraphContainer = styled.div`
   width: 100%;
@@ -70,7 +71,6 @@ const ActivityChart = ({ activity }) => {
             stroke="#74798C"
             strokeOpacity="0.8"
             tick={{ fontSize: 14, fill: "#9B9EAC" }}
-            tickFormatter={(value) => parseInt(value.split("-")[2])}
             tickLine={false}
           />
           <YAxis

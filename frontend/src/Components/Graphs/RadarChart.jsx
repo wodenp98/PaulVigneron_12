@@ -7,36 +7,27 @@ import {
   PolarAngleAxis,
   ResponsiveContainer,
 } from "recharts";
+import PropTypes from "prop-types";
 
 const GraphContainer = styled.div`
   background-color: #282d30;
   border-radius: 5px;
   width: 30%;
-  font-size: 12px;
+  font-size: 10px;
   @media screen and (max-width: 1220px) {
-    font-size: 10px;
+    font-size: 8px;
   }
 `;
-
-const day = {
-  1: "Intensité",
-  2: "Vitesse",
-  3: "Force",
-  4: "Endurance",
-  5: "Energie",
-  6: "Cardio",
-};
 
 const RadarChartGraphs = ({ performance }) => {
   return (
     <GraphContainer>
       <ResponsiveContainer width="100%" height="100%">
-        <RadarChart outerRadius="70%" data={performance.data}>
+        <RadarChart outerRadius="70%" data={performance}>
           <PolarGrid radialLines={false} />
           <PolarAngleAxis
             dataKey="kind"
             stroke="white"
-            tickFormatter={(value) => day[value]}
             tickLine={false}
             tickSize={7}
           />
