@@ -23,7 +23,7 @@ const RadarChartGraphs = ({ performance }) => {
   return (
     <GraphContainer>
       <ResponsiveContainer width="100%" height="100%">
-        <RadarChart outerRadius="70%" data={performance?.data}>
+        <RadarChart outerRadius="70%" data={performance}>
           <PolarGrid radialLines={false} />
           <PolarAngleAxis
             dataKey="kind"
@@ -39,7 +39,7 @@ const RadarChartGraphs = ({ performance }) => {
 };
 
 RadarChartGraphs.propTypes = {
-  performance: PropTypes.object,
+  performance: PropTypes.array,
 };
 
 export default RadarChartGraphs;

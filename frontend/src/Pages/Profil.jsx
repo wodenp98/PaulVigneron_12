@@ -10,6 +10,8 @@ import AverageSessions from "../Components/Graphs/AverageSessions";
 import MainData from "../Components/Graphs/Score";
 import NutritionCards from "../Components/NutritionCards";
 
+// import { USER_PERFORMANCE } from "../data/mock_user-data";
+
 import {
   fetchActivity,
   fetchUser,
@@ -62,6 +64,10 @@ const Profil = () => {
   const [performance, setPerformance] = useState();
   const [score, setScore] = useState();
   const [nutritionData, setNutritionData] = useState();
+  // let userId = 12;
+  // const userPerformance = USER_PERFORMANCE.find(
+  //   (user) => user.userId === userId
+  // );
 
   useEffect(() => {
     const fetchData = async () => {

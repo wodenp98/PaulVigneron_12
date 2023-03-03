@@ -36,26 +36,28 @@ export function getAverageSessions(data) {
 }
 
 export function getPerformance(data) {
-  const kind_fr = {
-    1: "Cardio",
-    2: "Energie",
-    3: "Endurance",
-    4: "Force",
-    5: "Vitesse",
-    6: "Intensité",
+  const frenchWords = {
+    1: "Intensité",
+    2: "Vitesse",
+    3: "Force",
+    4: "Endurance",
+    5: "Energie",
+    6: "Cardio",
   };
 
-  const obj_fr = {
+  let array = [];
+  data.data.data.forEach((item) => {
+    let dataValue = { value: item.value, kind: frenchWords[item.kind] };
+    return array.push(dataValue);
+  });
+
+  const performance = {
     userId: data.data.userId,
-    kind: {},
-    data: data.data.data,
+    kind: data.data.kind,
+    data: array,
   };
 
-  for (const item of obj_fr.data) {
-    item.kind = kind_fr[item.kind];
-  }
-
-  return obj_fr;
+  return performance.data;
 }
 export function getScore(data) {
   const dataApi = data.data;
