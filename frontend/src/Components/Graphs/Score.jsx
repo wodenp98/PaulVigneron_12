@@ -89,4 +89,8 @@ const Score = ({ score }) => {
   );
 };
 
+Score.propTypes = {
+  score: PropTypes.number,
+};
+
 export default Score;

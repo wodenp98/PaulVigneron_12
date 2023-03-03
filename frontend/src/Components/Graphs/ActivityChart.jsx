@@ -119,4 +119,8 @@ const ActivityChart = ({ activity }) => {
   );
 };
 
+ActivityChart.propTypes = {
+  activity: PropTypes.array,
+};
+
 export default ActivityChart;

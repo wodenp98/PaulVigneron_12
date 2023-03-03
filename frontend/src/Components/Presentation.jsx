@@ -35,4 +35,8 @@ const Presentation = ({ firstName }) => {
   );
 };
 
+Presentation.propTypes = {
+  firstName: PropTypes.string,
+};
+
 export default Presentation;

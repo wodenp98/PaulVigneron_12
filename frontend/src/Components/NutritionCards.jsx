@@ -94,4 +94,8 @@ const NutritionCards = ({ nutritionData }) => {
   );
 };
 
+NutritionCards.propTypes = {
+  nutritionData: PropTypes.object,
+};
+
 export default NutritionCards;

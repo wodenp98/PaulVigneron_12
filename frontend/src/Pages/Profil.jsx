@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import HeaderLogo from "../Components/HeaderLogo";
@@ -11,10 +11,10 @@ import MainData from "../Components/Graphs/Score";
 import NutritionCards from "../Components/NutritionCards";
 
 import {
-  useFetchActivity,
-  useFetchFirstname,
-  useFetchAverageSessions,
-  useFetchPerformance,
+  fetchActivity,
+  fetchUser,
+  fetchAverageSessions,
+  fetchPerformance,
 } from "../services/Services";
 import {
   getActivitySessions,
@@ -56,29 +56,42 @@ const GraphGrid = styled.div`
 
 const Profil = () => {
   let { id } = useParams();
+  const [users, setUsers] = useState();
+  const [activity, setActivity] = useState();
+  const [averageSessions, setAverageSessions] = useState();
+  const [performance, setPerformance] = useState();
+  const [score, setScore] = useState();
+  const [nutritionData, setNutritionData] = useState();
 
-  const [dataFirstname] = useFetchFirstname(id);
-  const firstname = getFirstname(dataFirstname);
+  useEffect(() => {
+    const fetchData = async () => {
+      const usersData = await fetchUser(id);
+      setUsers(getFirstname(usersData));
 
-  const [dataActivity] = useFetchActivity(id);
-  const activity = getActivitySessions(dataActivity);
+      const usersActivity = await fetchActivity(id);
+      setActivity(getActivitySessions(usersActivity));
 
-  const [dataAverageSessions] = useFetchAverageSessions(id);
-  const averageSessions = getAverageSessions(dataAverageSessions);
+      const usersAverageSessions = await fetchAverageSessions(id);
+      setAverageSessions(getAverageSessions(usersAverageSessions));
 
-  const [dataPerformance] = useFetchPerformance(id);
-  const performance = getPerformance(dataPerformance);
+      const usersPerformance = await fetchPerformance(id);
+      setPerformance(getPerformance(usersPerformance));
 
-  const score = getScore(dataFirstname);
+      const usersScore = await fetchUser(id);
+      setScore(getScore(usersScore));
 
-  const nutritionData = getNutrition(dataFirstname);
+      const usersNutritionData = await fetchUser(id);
+      setNutritionData(getNutrition(usersNutritionData));
+    };
+    fetchData();
+  }, [id]);
 
   return (
     <>
       <HeaderLogo />
       <Main>
         <NavBarVertical />
-        <Presentation firstName={firstname} />
+        <Presentation firstName={users} />
         <GraphGrid>
           <ActivityCharts activity={activity} />
 
