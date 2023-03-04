@@ -1,6 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
+/**
+ * Css for navbar horizontal components
+ */
+
 const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
@@ -14,6 +18,11 @@ const Nav = styled.nav`
 const Menu = styled.p`
   color: white;
 `;
+
+/**
+ *  Navigation in the horizontal navbar
+ * @returns {JSX}
+ */
 
 const NavBarHorizontal = () => {
   return (

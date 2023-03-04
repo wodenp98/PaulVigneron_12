@@ -3,6 +3,9 @@ import styled from "styled-components";
 import RedOval from "../../assets/RedOval.png";
 import BlackOval from "../../assets/BlackOval.png";
 
+/**
+ * Css for header of graph activity components
+ */
 const LegendContainer = styled.div`
   display: flex;
   justify-content: space-between;

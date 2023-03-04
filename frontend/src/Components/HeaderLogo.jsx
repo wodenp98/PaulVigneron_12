@@ -3,6 +3,10 @@ import styled from "styled-components";
 import LogoSportSee from "../assets/logoSportSee.png";
 import NavBarHorizontal from "./NavBarHorizontal";
 
+/**
+ * Css for the components
+ */
+
 const Header = styled.header`
   display: flex;
   justify-content: space-between;
@@ -25,6 +29,11 @@ const LogoTitle = styled.h1`
     }
   }
 `;
+
+/**
+ * Logo Sportsee in the horizontal navbar
+ * @returns {JSON}
+ */
 
 const HeaderLogo = () => {
   return (

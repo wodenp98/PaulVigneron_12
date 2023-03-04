@@ -1,7 +1,19 @@
+/**
+ * User firstname
+ * @param {array} data Api
+ * @returns {object}
+ */
+
 export const getFirstname = (data) => {
   const firstname = data.data.userInfos.firstName;
   return firstname;
 };
+
+/**
+ * User activity
+ * @param {array} data Api
+ * @returns {array}
+ */
 
 export function getActivitySessions(data) {
   const arrayActivity = [];
@@ -19,6 +31,12 @@ export function getActivitySessions(data) {
   return arrayActivity;
 }
 
+/**
+ * User average session
+ * @param {array} data Api
+ * @returns {array}
+ */
+
 export function getAverageSessions(data) {
   const arrayAverageSessions = [];
   const sessions = data.data?.sessions;
@@ -34,6 +52,12 @@ export function getAverageSessions(data) {
 
   return arrayAverageSessions;
 }
+
+/**
+ * User performance
+ * @param {array} data Api
+ * @returns {array}
+ */
 
 export function getPerformance(data) {
   const frenchWords = {
@@ -59,6 +83,13 @@ export function getPerformance(data) {
 
   return performance.data;
 }
+
+/**
+ * User score
+ * @param {array} data Api
+ * @returns {number}
+ */
+
 export function getScore(data) {
   const dataApi = data.data;
   if (dataApi.todayScore) {
@@ -67,6 +98,12 @@ export function getScore(data) {
     return dataApi.score * 100;
   }
 }
+
+/**
+ * User nutrition
+ * @param {array} data api
+ * @returns {object}
+ */
 
 export function getNutrition(data) {
   const dataApi = data.data;

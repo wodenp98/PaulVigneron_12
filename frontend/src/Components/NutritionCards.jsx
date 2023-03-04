@@ -6,6 +6,10 @@ import iconLipides from "../assets/iconLipides.png";
 import iconProteines from "../assets/iconProteines.png";
 import PropTypes from "prop-types";
 
+/**
+ * Css for nutrition card components
+ */
+
 const DivContainer = styled.div`
   grid-area: 2 / 3 / 2 / 4;
   display: flex;
@@ -56,6 +60,12 @@ const ParagraphType = styled.p`
   padding-top: 5px;
   margin: 0;
 `;
+
+/**
+ * Component of a user nutrition data
+ * @param {object} nutritionData
+ * @returns {JSX}
+ */
 
 const NutritionCards = ({ nutritionData }) => {
   return (

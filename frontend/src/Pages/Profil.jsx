@@ -27,6 +27,10 @@ import {
   getNutrition,
 } from "../utils/Model";
 
+/**
+ * Css for profil page components
+ */
+
 const Main = styled.main`
   display: grid;
   grid-template-columns: 10% 63% 20%;
@@ -57,7 +61,14 @@ const GraphGrid = styled.div`
 `;
 
 const Profil = () => {
+  /**
+   * Get id of a user
+   */
   let { id } = useParams();
+
+  /**
+   * Initiate the state for datas
+   */
   const [users, setUsers] = useState();
   const [activity, setActivity] = useState();
   const [averageSessions, setAverageSessions] = useState();
@@ -69,6 +80,9 @@ const Profil = () => {
   //   (user) => user.userId === userId
   // );
 
+  /**
+   * Get data user from API and update the user state
+   */
   useEffect(() => {
     const fetchData = async () => {
       const usersData = await fetchUser(id);

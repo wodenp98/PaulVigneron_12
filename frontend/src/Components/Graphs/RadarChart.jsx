@@ -9,6 +9,10 @@ import {
 } from "recharts";
 import PropTypes from "prop-types";
 
+/**
+ * Css for graph performance
+ */
+
 const GraphContainer = styled.div`
   background-color: #282d30;
   border-radius: 5px;
@@ -18,6 +22,12 @@ const GraphContainer = styled.div`
     font-size: 8px;
   }
 `;
+
+/**
+ * Data for performance graph
+ * @param {object} performance user
+ * @returns {JSX}
+ */
 
 const RadarChartGraphs = ({ performance }) => {
   return (

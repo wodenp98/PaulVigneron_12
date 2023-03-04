@@ -3,6 +3,10 @@ import styled from "styled-components";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 import PropTypes from "prop-types";
 
+/**
+ * Css for graph score
+ */
+
 const GraphContainer = styled.div`
   position: relative;
   display: flex;
@@ -48,6 +52,12 @@ const PercentParagraph = styled.p`
 `;
 
 const COLORS = ["#ff0101", "transparent"];
+
+/**
+ * Data for score graph
+ * @param {number} score
+ * @returns {JSX}
+ */
 
 const Score = ({ score }) => {
   const data = [{ value: score }, { value: 100 - score }];

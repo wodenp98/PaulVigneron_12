@@ -2,6 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
+/**
+ * Css for presentation components
+ */
+
 const PresentationContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -21,6 +25,12 @@ const PresentationCongrats = styled.p`
   margin: 0;
   font-size: 18px;
 `;
+
+/**
+ * Component display firstname of a user
+ * @param {str} firstname
+ * @returns {JSX}
+ */
 
 const Presentation = ({ firstName }) => {
   return (

@@ -1,5 +1,11 @@
 import axios from "axios";
 
+/**
+ * Fetch Sportsee api for user data (display firstname, score and nutrition data)
+ * @param {string} id
+ * @returns {object} user main data
+ */
+
 export const fetchUser = async (id) => {
   try {
     const response = await axios.get(`http://localhost:3001/user/${id}`);
@@ -8,6 +14,12 @@ export const fetchUser = async (id) => {
     console.log(error);
   }
 };
+
+/**
+ * Fetch Sportsee api for user data (display activity chart)
+ * @param {string} id
+ * @returns {object} user activity data
+ */
 
 export const fetchActivity = async (id) => {
   try {
@@ -20,6 +32,12 @@ export const fetchActivity = async (id) => {
   }
 };
 
+/**
+ * Fetch Sportsee api for user data (display averageSessions chart)
+ * @param {string} id
+ * @returns {object} user average sessions data
+ */
+
 export const fetchAverageSessions = async (id) => {
   try {
     const response = await axios.get(
@@ -30,6 +48,12 @@ export const fetchAverageSessions = async (id) => {
     console.log(error);
   }
 };
+
+/**
+ * Fetch Sportsee api for user data (display performance chart)
+ * @param {string} id
+ * @returns {object} user performance data
+ */
 
 export const fetchPerformance = async (id) => {
   try {

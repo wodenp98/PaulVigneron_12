@@ -10,6 +10,10 @@ import {
 } from "recharts";
 import PropTypes from "prop-types";
 
+/**
+ * Css for graph average session
+ */
+
 const GraphContainer = styled.div`
   background-color: #ff0000;
   position: relative;
@@ -50,6 +54,13 @@ const TooltipParagraph = styled.p`
   margin: auto;
 `;
 
+/**
+ * Custom Tooltip for the chart when we are hover it
+ * @param {object} payload data for the legend
+ * @param {boolean} active return true or false when the mouse is over the graph or no
+ * @returns {JSX}
+ */
+
 function CustomTooltip({ payload, active }) {
   if (active && payload && payload.length) {
     return (
@@ -60,6 +71,12 @@ function CustomTooltip({ payload, active }) {
   }
   return null;
 }
+
+/**
+ * Data for average sessions graph
+ * @param {array} average sessions for a user
+ * @returns {JSX}
+ */
 
 const AverageSessions = ({ average }) => {
   return (

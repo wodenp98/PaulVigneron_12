@@ -9,6 +9,10 @@ import {
 import Profil from "./Pages/Profil";
 import styled from "styled-components";
 
+/**
+ * Create the global style of the application
+ */
+
 const AppStyled = styled.div`
   position: relative;
   margin: auto;
@@ -17,6 +21,11 @@ const AppStyled = styled.div`
   min-height: 780px;
   height: 1024px;
 `;
+
+/**
+ * Create the routes
+ * @returns {JSX}
+ */
 
 const App = () => {
   return (

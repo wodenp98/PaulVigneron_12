@@ -5,6 +5,10 @@ import IconStrenght from "../assets/iconStrenght.png";
 import IconSwim from "../assets/iconSwim.png";
 import IconYoga from "../assets/iconYoga.png";
 
+/**
+ * Css for navbar vertical components
+ */
+
 const NavContainer = styled.div`
   grid-column: 1;
   grid-row: span 2;
@@ -35,6 +39,11 @@ const CopyrightDiv = styled.div`
   transform: rotate(180deg);
   white-space: nowrap;
 `;
+
+/**
+ * Icon in the navbar vertical
+ * @returns {JSX}
+ */
 
 const NavBarVertical = () => {
   return (
