@@ -7,7 +7,7 @@ import iconProteines from "../assets/iconProteines.png";
 import PropTypes from "prop-types";
 
 /**
- * Css for nutrition card components
+ * Css for nutrition card components with styled components
  */
 
 const DivContainer = styled.div`
@@ -63,8 +63,8 @@ const ParagraphType = styled.p`
 
 /**
  * Component of a user nutrition data
- * @param {object} nutritionData
- * @returns {JSX}
+ * @param {object} nutritionData user
+ * @returns {JSX} display nutrition cards using nutrition data user
  */
 
 const NutritionCards = ({ nutritionData }) => {

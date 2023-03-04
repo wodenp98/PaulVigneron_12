@@ -4,7 +4,7 @@ import LogoSportSee from "../assets/logoSportSee.png";
 import NavBarHorizontal from "./NavBarHorizontal";
 
 /**
- * Css for the components
+ * Css for the components with styled components
  */
 
 const Header = styled.header`
@@ -32,7 +32,7 @@ const LogoTitle = styled.h1`
 
 /**
  * Logo Sportsee in the horizontal navbar
- * @returns {JSON}
+ * @returns {JSON} logo display
  */
 
 const HeaderLogo = () => {

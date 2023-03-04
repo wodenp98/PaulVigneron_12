@@ -4,7 +4,7 @@ import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 import PropTypes from "prop-types";
 
 /**
- * Css for graph score
+ * Css for graph score with styled components
  */
 
 const GraphContainer = styled.div`
@@ -54,9 +54,9 @@ const PercentParagraph = styled.p`
 const COLORS = ["#ff0101", "transparent"];
 
 /**
- * Data for score graph
- * @param {number} score
- * @returns {JSX}
+ * Components display score for a user
+ * @param {number} score user
+ * @returns {JSX} piechart graph using data from score user
  */
 
 const Score = ({ score }) => {

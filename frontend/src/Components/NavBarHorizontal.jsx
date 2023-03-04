@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 /**
- * Css for navbar horizontal components
+ * Css for navbar horizontal components with styled components
  */
 
 const Nav = styled.nav`
@@ -21,7 +21,7 @@ const Menu = styled.p`
 
 /**
  *  Navigation in the horizontal navbar
- * @returns {JSX}
+ * @returns {JSX} display menu in the dashboard
  */
 
 const NavBarHorizontal = () => {

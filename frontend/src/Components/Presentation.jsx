@@ -3,7 +3,7 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 
 /**
- * Css for presentation components
+ * Css for presentation components with styled components
  */
 
 const PresentationContainer = styled.div`
@@ -29,7 +29,7 @@ const PresentationCongrats = styled.p`
 /**
  * Component display firstname of a user
  * @param {str} firstname
- * @returns {JSX}
+ * @returns {JSX} display the firstname in the dashboard
  */
 
 const Presentation = ({ firstName }) => {

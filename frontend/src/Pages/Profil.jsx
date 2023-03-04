@@ -28,7 +28,7 @@ import {
 } from "../utils/Model";
 
 /**
- * Css for profil page components
+ * Css for profil page components with styled components
  */
 
 const Main = styled.main`

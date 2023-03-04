@@ -2,7 +2,7 @@ import axios from "axios";
 
 /**
  * Fetch Sportsee api for user data (display firstname, score and nutrition data)
- * @param {string} id
+ * @param {string} id id from the user
  * @returns {object} user main data
  */
 
@@ -17,7 +17,7 @@ export const fetchUser = async (id) => {
 
 /**
  * Fetch Sportsee api for user data (display activity chart)
- * @param {string} id
+ * @param {string} id id from the user
  * @returns {object} user activity data
  */
 
@@ -34,7 +34,7 @@ export const fetchActivity = async (id) => {
 
 /**
  * Fetch Sportsee api for user data (display averageSessions chart)
- * @param {string} id
+ * @param {string} id id from the user
  * @returns {object} user average sessions data
  */
 
@@ -51,7 +51,7 @@ export const fetchAverageSessions = async (id) => {
 
 /**
  * Fetch Sportsee api for user data (display performance chart)
- * @param {string} id
+ * @param {string} id id from the user
  * @returns {object} user performance data
  */
 

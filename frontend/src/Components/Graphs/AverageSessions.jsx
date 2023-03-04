@@ -11,7 +11,7 @@ import {
 import PropTypes from "prop-types";
 
 /**
- * Css for graph average session
+ * Css for graph activity with styled components
  */
 
 const GraphContainer = styled.div`
@@ -55,10 +55,10 @@ const TooltipParagraph = styled.p`
 `;
 
 /**
- * Custom Tooltip for the chart when we are hover it
+ * Function that allow to custom Tooltop
  * @param {object} payload data for the legend
  * @param {boolean} active return true or false when the mouse is over the graph or no
- * @returns {JSX}
+ * @returns {JSX} Tooltip customize
  */
 
 function CustomTooltip({ payload, active }) {
@@ -73,9 +73,9 @@ function CustomTooltip({ payload, active }) {
 }
 
 /**
- * Data for average sessions graph
+ * Components using recharts display average session graph
  * @param {array} average sessions for a user
- * @returns {JSX}
+ * @returns {JSX} line chart user average session
  */
 
 const AverageSessions = ({ average }) => {

@@ -10,7 +10,7 @@ import {
 import PropTypes from "prop-types";
 
 /**
- * Css for graph performance
+ * Css for graph performance with styled components
  */
 
 const GraphContainer = styled.div`
@@ -24,9 +24,9 @@ const GraphContainer = styled.div`
 `;
 
 /**
- * Data for performance graph
+ * Components display performance for a user
  * @param {object} performance user
- * @returns {JSX}
+ * @returns {JSX} radarchart graph using data from user performance
  */
 
 const RadarChartGraphs = ({ performance }) => {

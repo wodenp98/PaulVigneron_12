@@ -4,7 +4,7 @@ import RedOval from "../../assets/RedOval.png";
 import BlackOval from "../../assets/BlackOval.png";
 
 /**
- * Css for header of graph activity components
+ * Css for header of graph activity components with styled components
  */
 const LegendContainer = styled.div`
   display: flex;
@@ -37,6 +37,11 @@ const Dot = styled.div`
 const ParagraphLegend = styled.p`
   color: #74798c;
 `;
+
+/**
+ * Components display the title and the legend for activity graph
+ * @returns  {JSX} the legend customize
+ */
 
 const LegendActivity = () => {
   return (

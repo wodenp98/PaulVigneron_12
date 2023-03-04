@@ -6,7 +6,7 @@ import IconSwim from "../assets/iconSwim.png";
 import IconYoga from "../assets/iconYoga.png";
 
 /**
- * Css for navbar vertical components
+ * Css for navbar vertical components with styled components
  */
 
 const NavContainer = styled.div`
@@ -42,7 +42,7 @@ const CopyrightDiv = styled.div`
 
 /**
  * Icon in the navbar vertical
- * @returns {JSX}
+ * @returns {JSX} display icon in the left of the dashboard
  */
 
 const NavBarVertical = () => {

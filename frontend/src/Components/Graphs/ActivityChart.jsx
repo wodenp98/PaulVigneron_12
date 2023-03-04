@@ -13,7 +13,7 @@ import LegendContainer from "./LegendActivity";
 import PropTypes from "prop-types";
 
 /**
- * Css for graph activity
+ * Css for graph activity with styled components
  */
 const GraphContainer = styled.div`
   width: 100%;
@@ -41,10 +41,10 @@ const TooltipParagraph = styled.p`
 `;
 
 /**
- * Custom Tooltip for the chart when we are hover it
+ * Function that allow to custom Tooltip
  * @param {object} payload data for the legend
  * @param {boolean} active return true or false when the mouse is over the graph or no
- * @returns {JSX}
+ * @returns {JSX} Tooltip customize
  */
 
 const CustomTooltip = ({ payload, active }) => {
@@ -60,9 +60,9 @@ const CustomTooltip = ({ payload, active }) => {
 };
 
 /**
- * Data for activity graph
+ * Component using rechart display user activity graph
  * @param {object} activity for a user
- * @returns {JSX}
+ * @returns {JSX} barchart user activitity
  */
 
 const ActivityChart = ({ activity }) => {

@@ -1,7 +1,7 @@
 /**
- * User firstname
+ * Function to return the firstname
  * @param {array} data Api
- * @returns {object}
+ * @returns {object} firstname
  */
 
 export const getFirstname = (data) => {
@@ -10,9 +10,9 @@ export const getFirstname = (data) => {
 };
 
 /**
- * User activity
+ * Function to get activity data for a user
  * @param {array} data Api
- * @returns {array}
+ * @returns {array} data activity
  */
 
 export function getActivitySessions(data) {
@@ -32,9 +32,9 @@ export function getActivitySessions(data) {
 }
 
 /**
- * User average session
+ * Function to get the average session from a user
  * @param {array} data Api
- * @returns {array}
+ * @returns {array} average session data with the good format
  */
 
 export function getAverageSessions(data) {
@@ -54,9 +54,9 @@ export function getAverageSessions(data) {
 }
 
 /**
- * User performance
+ * Function to get the performance from the user
  * @param {array} data Api
- * @returns {array}
+ * @returns {array} performance data
  */
 
 export function getPerformance(data) {
@@ -85,9 +85,9 @@ export function getPerformance(data) {
 }
 
 /**
- * User score
+ * Function to get the score from a user
  * @param {array} data Api
- * @returns {number}
+ * @returns {number} score data
  */
 
 export function getScore(data) {
@@ -100,9 +100,9 @@ export function getScore(data) {
 }
 
 /**
- * User nutrition
+ * Function to get nutrition data from a user to use in nutrition cards
  * @param {array} data api
- * @returns {object}
+ * @returns {object} nutrition data
  */
 
 export function getNutrition(data) {
