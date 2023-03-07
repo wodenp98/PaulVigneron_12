@@ -73,30 +73,28 @@ const NutritionCards = ({ nutritionData }) => {
       <DivCards>
         <ImgIcon src={iconCalories} alt="Icône Calories" />
         <DivValueContent>
-          <ParagraphValue>
-            {nutritionData?.calorieCount.toLocaleString("en-US")}kCal
-          </ParagraphValue>
+          <ParagraphValue>{nutritionData.calorieCount}kCal</ParagraphValue>
           <ParagraphType>Calories</ParagraphType>
         </DivValueContent>
       </DivCards>
       <DivCards>
         <ImgIcon src={iconProteines} alt="Icône Protéines" />
         <DivValueContent>
-          <ParagraphValue>{nutritionData?.proteinCount}g</ParagraphValue>
+          <ParagraphValue>{nutritionData.proteinCount}g</ParagraphValue>
           <ParagraphType>Proteines</ParagraphType>
         </DivValueContent>
       </DivCards>
       <DivCards>
         <ImgIcon src={iconGlucides} alt="Icône Glucides" />
         <DivValueContent>
-          <ParagraphValue>{nutritionData?.carbohydrateCount}g</ParagraphValue>
+          <ParagraphValue>{nutritionData.carbohydrateCount}g</ParagraphValue>
           <ParagraphType>Glucides</ParagraphType>
         </DivValueContent>
       </DivCards>
       <DivCards>
         <ImgIcon src={iconLipides} alt="Icône Lipides" />
         <DivValueContent>
-          <ParagraphValue>{nutritionData?.lipidCount}g</ParagraphValue>
+          <ParagraphValue>{nutritionData.lipidCount}g</ParagraphValue>
           <ParagraphType>Lipides</ParagraphType>
         </DivValueContent>
       </DivCards>

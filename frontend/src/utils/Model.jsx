@@ -21,9 +21,8 @@ export function getActivitySessions(data) {
 
   activity.forEach((item) => {
     let objectActivity = {
+      ...item,
       day: new Date(item.day).getDate(),
-      kilogram: item.kilogram,
-      calories: item.calories,
     };
 
     arrayActivity.push(objectActivity);
@@ -44,8 +43,8 @@ export function getAverageSessions(data) {
 
   sessions.forEach((item) => {
     let objectAverageSessions = {
+      ...item,
       day: day[item.day],
-      sessionLength: item.sessionLength,
     };
     arrayAverageSessions.push(objectAverageSessions);
   });
@@ -71,16 +70,14 @@ export function getPerformance(data) {
 
   let array = [];
   data.data.data.forEach((item) => {
-    let dataValue = { value: item.value, kind: frenchWords[item.kind] };
+    let dataValue = { ...item, kind: frenchWords[item.kind] };
     return array.push(dataValue);
   });
 
   const performance = {
-    userId: data.data.userId,
-    kind: data.data.kind,
+    ...data.data,
     data: array,
   };
-
   return performance.data;
 }
 
@@ -106,8 +103,12 @@ export function getScore(data) {
  */
 
 export function getNutrition(data) {
-  const dataApi = data.data;
-  const keyData = dataApi.keyData;
+  const keyData = data.data.keyData;
 
-  return keyData;
+  let newData = {
+    ...keyData,
+    calorieCount: keyData.calorieCount.toLocaleString("en-US"),
+  };
+
+  return newData;
 }

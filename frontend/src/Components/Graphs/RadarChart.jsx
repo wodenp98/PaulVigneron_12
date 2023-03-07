@@ -17,7 +17,7 @@ const GraphContainer = styled.div`
   background-color: #282d30;
   border-radius: 5px;
   width: 30%;
-  font-size: 10px;
+  font-size: 12px;
   @media screen and (max-width: 1220px) {
     font-size: 8px;
   }

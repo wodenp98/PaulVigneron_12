@@ -10,8 +10,6 @@ import AverageSessions from "../Components/Graphs/AverageSessions";
 import MainData from "../Components/Graphs/Score";
 import NutritionCards from "../Components/NutritionCards";
 
-// import { USER_PERFORMANCE } from "../data/mock_user-data";
-
 import {
   fetchActivity,
   fetchUser,
@@ -69,16 +67,12 @@ const Profil = () => {
   /**
    * Initiate the state for datas
    */
-  const [users, setUsers] = useState();
-  const [activity, setActivity] = useState();
-  const [averageSessions, setAverageSessions] = useState();
-  const [performance, setPerformance] = useState();
-  const [score, setScore] = useState();
-  const [nutritionData, setNutritionData] = useState();
-  // let userId = 12;
-  // const userPerformance = USER_PERFORMANCE.find(
-  //   (user) => user.userId === userId
-  // );
+  const [users, setUsers] = useState("");
+  const [activity, setActivity] = useState([]);
+  const [averageSessions, setAverageSessions] = useState([]);
+  const [performance, setPerformance] = useState([]);
+  const [score, setScore] = useState(0);
+  const [nutritionData, setNutritionData] = useState({});
 
   /**
    * Get data user from API and update the user state
@@ -117,7 +111,9 @@ const Profil = () => {
 
           <GraphSide>
             <AverageSessions average={averageSessions} />
-            <PerformanceCharts performance={performance} />
+            {performance.length > 0 && (
+              <PerformanceCharts performance={performance} />
+            )}
             <MainData score={score} />
           </GraphSide>
         </GraphGrid>
